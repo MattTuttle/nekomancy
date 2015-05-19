@@ -1,0 +1,3 @@
+-neko nekomancy.n
+-main Main
+-cmd nekotools boot nekomancy.n && rm nekomancy.n
