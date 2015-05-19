@@ -5,7 +5,7 @@ Starts a neko module and reloads it when the module changes. Useful for testing 
 ## Usage
 
 ```bash
-nekomancy [-v] <module.n>
+nekomancy [-v] module.n
 ```
 
 The `-v` tag will output more information about the process start/restart including anything in stdout.
