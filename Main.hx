@@ -17,7 +17,13 @@ class Main
 	static function readProcess()
 	{
 		var mainThread = Thread.readMessage(true);
-		print(process.stdout.readAll().toString());
+		try {
+			print(process.stdout.readAll().toString());
+			if (process.exitCode() != 0)
+			{
+				print(process.stderr.readAll().toString());
+			}
+		} catch (e:Dynamic) { }
 		mainThread.sendMessage("done");
 	}
 
@@ -69,7 +75,7 @@ class Main
 				process = new Process("neko", [module]);
 				lastTime = newTime;
 			}
-			Sys.sleep(1);
+			Sys.sleep(0.5);
 		}
 	}
 }
